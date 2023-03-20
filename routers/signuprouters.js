@@ -1,10 +1,10 @@
-const express= require('express');
-const app = express()
-const Router = express.Router()
-Router.use(express.json())
-const { getsing , postsing } = require("../../controllers/studentcontrollers/signupcontrollers")
+const express = require('express');
+const router = express.Router();
+router.use(express.json());
 
-Router.post("/",postsing)
-Router.get("/",getsing)
+const { postsignup, LoginUser} = require('../Controllers/signupcontrollers')
 
-module.exports = Router
+router.post('/',postsignup)
+router.post('/login',LoginUser)
+
+module.exports = router
