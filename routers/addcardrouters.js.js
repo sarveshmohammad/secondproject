@@ -1,5 +1,5 @@
 const express = require('express');
-const protect = require('../moddelware/addcarrdmodderware')
+const protect = require('../middelware/addcarrdmodderware')
 
 const { getaddtocard, postaddtocard, deleteaddtocard } = require("../controllers/addcardcontrollers.js");
 const router = express.Router();

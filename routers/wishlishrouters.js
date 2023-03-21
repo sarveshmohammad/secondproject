@@ -1,5 +1,5 @@
 const express= require('express');
-const protect = require('../moddelware/wishlishmidderware')
+const protect = require('../middelware/wishlishmidderware')
 
 const { getwishlish, postwishlish, deletewishlish } = require("../controllers/wishlishcontrollers");
 const router = express.Router();

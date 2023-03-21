@@ -15,6 +15,8 @@ app.use('/api/addcard',require('./routers/addcardrouters.js'))
 
 app.use('/api/signup',require('./routers/signuprouters'))
 
+app.use('/api/address',require("./routers/addressrouters"))
+
 
 app.listen(port, () => {
     console.log(`port is colled ${port}`);

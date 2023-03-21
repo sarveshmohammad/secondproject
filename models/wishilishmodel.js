@@ -5,7 +5,6 @@ const wishlish = new mongoose.Schema({
     price: {type: Number},
     img: {type: String},
     user_id:{type: String}
-    
 }, 
 {
     timestamps: true
