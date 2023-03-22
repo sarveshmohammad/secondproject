@@ -1,8 +1,14 @@
-const express = require('express');
-const app = express();
+const express= require('express');
+const Categories = require('./data')
 
-const { Categris } = require('./data')
+const router = express.Router();
 
-app.get('/get',Categris);
+router.use(express.json())
 
-app.listen(5000)
+
+router.get('/get',(req,res)=>{
+    res.json({status:true,data:Categories})
+})    
+
+
+module.exports = router;

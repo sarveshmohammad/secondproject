@@ -17,6 +17,7 @@ app.use('/api/signup',require('./routers/signuprouters'))
 
 app.use('/api/address',require("./routers/addressrouters"))
 
+app.use('/api/sarees',require('./datarouter'))
 
 app.listen(port, () => {
     console.log(`port is colled ${port}`);

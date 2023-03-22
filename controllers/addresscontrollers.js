@@ -15,15 +15,20 @@ const addressget = async (req, res) => {
     
 const addresspost = async (req, res) => {
 
-    const { title, dis, price,img} = req.body
-    if (!title && !dis && !price && !img ) {
-        res.status(400).json({ message: "Please add all Filed" })
+    const { FirstName, LastName, PhoneNumber, Streetaddress, Locality, Town_City, Postcode, State, AddressType,} = req.body
+    if (!FirstName && !LastName && !PhoneNumber && !Streetaddress && !Locality && !Town_City && !Postcode && !State && !AddressType) {
+        res.status(400).json({ message: "Please add all Filed"})
     }
     let data = await address.create({ 
-        title,
-        dis,
-        img,
-        price,
+        FirstName, 
+        LastName, 
+        PhoneNumber, 
+        Streetaddress, 
+        Locality, 
+        Town_City, 
+        Postcode, 
+        State, 
+        AddressType,
         user_id:req.user
 
     });
@@ -31,19 +36,20 @@ const addresspost = async (req, res) => {
     res.status(200).json(data)
 }
 
-// const deleteaddress=  async(req,res)=>{
+const deleteaddress =  async(req,res)=>{
    
-//     let findid = await address.findById(req.params._id);
-//     if(!findid){
-//         res.status(400);
-//         res.send("user not found");
-//     }
-//         await findid.remove();
+    let findid = await address.findById(req.params._id);
+    if(!findid){
+        res.status(400);
+        res.send("user not found");
+    }
+        await findid.remove();
        
-//     res.status(200).json({message : `delete data ${req.params.id}`});
-//  }
+    res.status(200).json({message : `delete data ${req.params.id}`});
+ }
 
 module.exports = {
     addressget,
-    addresspost
+    addresspost,
+    deleteaddress
 }
